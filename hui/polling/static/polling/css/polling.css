@@ -1,0 +1,36 @@
+body{
+    background : #2c2c2c;
+
+}
+h1{
+    color : white;
+}
+h3{
+    color : white;
+    padding-left : 15px
+}
+h4{
+    color : #2c2c2z;
+}
+form{
+padding-left : 30px;
+padding-right : 30px;
+}
+.namefio{
+padding-right:30%;
+padding-left:30%;
+margin-left : auto;
+margin-right: auto;
+}
+::placeholder {
+   text-align: center;
+}
+.bttn{
+padding-right:30%;
+padding-left:47%;
+}
+.notice{
+position : absolute;
+bottom : 0;
+left : 0;
+}

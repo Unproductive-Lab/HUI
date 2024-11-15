@@ -4,4 +4,24 @@
 
 {% block main %}
 <h1 align="center">Хранитель Уведомлений об Инициативах</h1>
+<br/>
+<h4 align="center">v-0.1</h4>
+<hr/>
+
+<form method="post">
+    {% csrf_token %}
+
+
+    <br>
+    <br>
+    <div class="namefio">{{ form.fio }}<br></div>
+    {{ form.thefuckingthing }} <br>
+
+    <div class="bttn"><button class="btn btn-success" type="submit">Отправить</button></div>
+    <span>{{ error }}</span>
+</form>
+<br>
+<br>
+<h3 align="bottom-left" class="notice">Обращаем внимание - запросы поступают напрямую на почту системного администратора. <br>
+    Если вы отправите несколько раз одну и ту же заявку, это не повысит шанс того, что её увидят.</h3>
 {% endblock %}

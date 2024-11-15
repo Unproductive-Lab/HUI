@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u2)g-#=#x&ty-xh*f%umik#2lqatn$$a0!5kue_)s*l2+0!x&d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
@@ -117,8 +117,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    "polling/static/polling",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'свои подставляй данные, пидор'
+EMAIL_HOST_PASSWORD = 'Свои данные подставляй!'
+EMAIL_RECIPIENT = 'Свои данные подставь, понял бля?'
+EMAIL_PORT = 465
+EMAIL_USE_TSL = True
+
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
