@@ -9,22 +9,12 @@ def index(request):
     if request.method == "POST":
         form = IssueForm(request.POST)
         if form.is_valid():
-            subject = "[НОВАЯ ЗАЯВКА]"
-            body = {
-                'name': form.cleaned_data['fio'],
-                'issue': form.cleaned_data['thefuckingthing'],
-            }
-            message = "\n".join(body.values())
+
             try:
-                send_mail(subject,message,
-                        settings.EMAIL_HOST_USER,
-                            [settings.EMAIL_RECIPIENT],
-                          auth_user=settings.EMAIL_HOST_USER,
-                          auth_password=settings.EMAIL_HOST_PASSWORD
-                          )
+                form.save()
 
                 return redirect('success')
-            except BadHeaderError:
+            except Exception:
                 return HttpResponse("Найден некорректный заголовок")
 
         else:
